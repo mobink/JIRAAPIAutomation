@@ -69,9 +69,3 @@ After execution, a `test_report.json` and `jira_api_test.log` will be generated,
 - Implement retry mechanisms
 - Create more granular test scenarios
 - Add support for different issue types
-
-## License
-[Specify your license here]
-
-## Contact
-[Your contact information]
