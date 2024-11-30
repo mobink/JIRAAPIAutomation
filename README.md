@@ -11,7 +11,7 @@ This project provides an automated test suite for interacting with the Jira REST
 
 ### 1. Clone the Repository
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/mobink/JIRAAPIAutomation.git
 cd jira-api-test-automation
 ```
 
