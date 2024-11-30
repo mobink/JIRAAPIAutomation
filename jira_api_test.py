@@ -12,7 +12,9 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 logging.basicConfig(filename='jira_api_test.log', level=logging.INFO,
                     format='%(asctime)s - %(levelname)s - %(message)s')
 
+
 class JiraAPIClient:
+
     def __init__(self, email, api_token, base_url):
         self.base_url = base_url
         self.headers = {
@@ -67,7 +69,7 @@ class JiraAPIClient:
         return response.status_code == 204
 
 
-def main():
+def jira_api_test():
     # Credentials
     email = "mobinvurse@gmail.com"
     api_token = "ATATT3xFfGF0vGISs0m-dcZDtUkVEHOjQSHZt9xP1gJ2FkqrSpc_-yBEdBrDN3Yd0p1Hqd5yiAFmomy0djnA-KuUYHQ_as5Mdli-yp4KejR0Qf-PTJ0eJoSKQ4lMu4EsqSUr9LcLz_Gayg1enuCxjb3Ia1B6l0-NjJH2J3GWbzvrZQh-zPno8qY=7E4B0420"
@@ -103,7 +105,7 @@ def main():
             description="Updated description via REST API"
         )
         test_report["test_cases"].append({"name": "Update Issue", "result": "Pass" if update_result else "Fail"})
-        logging.info(f"Issue Update Success: { update_result}")
+        logging.info(f"Issue Update Success: {update_result}")
 
         # Delete Issue
         delete_result = jira_client.delete_issue(issue_key)
@@ -119,5 +121,6 @@ def main():
         json.dump(test_report, report_file, indent=4)
     logging.info("Test report generated.")
 
+
 if __name__ == "__main__":
-    main()
+    jira_api_test()
